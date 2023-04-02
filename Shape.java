@@ -36,19 +36,25 @@ class Parallelogram implements Shape{
     }
 }
 
-class ShapeName{
-    public static void main(String[] args){
-        Circle c = new Circle();
-        c.printName();
-        Square s =new Square();
-        s.printName();
-        Rectangle r = new Rectangle();
-        r.printName();
-        Triangle t = new Triangle();
-        t.printName();
-        Parallelogram p = new Parallelogram();
-        p.printName();
+class MainClass{
+    public static void main(String[] args) {
+        Shape shapeCircle = new Circle();
+        Shape shapeSquare = new Square();
+        Shape shapeRectangle = new Rectangle();
+        Shape shapeTriangle = new Triangle();
+        Shape shapeParallelogram = new Parallelogram();
 
+        GraphicEditor.printShapeName(shapeRectangle);
+        GraphicEditor.printShapeName(shapeCircle);
+        GraphicEditor.printShapeName(shapeParallelogram);
+        GraphicEditor.printShapeName(shapeSquare);
+        GraphicEditor.printShapeName(shapeTriangle);
+    }
+}
+class GraphicEditor {
+
+    public static void printShapeName(Shape shape){
+        shape.printName();
     }
 
 }
