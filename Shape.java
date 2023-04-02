@@ -1,59 +1,54 @@
-package hw8.try2;
+package hw8.try3.graphicEditor;
 
 interface Shape {
-    // Abstract methods.
-    public int getArea();
-    public int getCircumference();
+    void printName();
 }
-
+class Circle implements Shape{
+    @Override
+    public void printName() {
+        System.out.println("Circle");
+    }
+}
 class Square implements Shape {
-    int side;
-    Square(int side) {
-        this.side = side;
+    @Override
+    public void printName() {
+        System.out.println("Square");
     }
-
-    public int getArea(){
-        return side * side;
-    }
-
-    public int getCircumference(){
-        return 4 * side;
+}
+class Rectangle implements Shape{
+    @Override
+    public void printName() {
+        System.out.println("Rectangle");
     }
 }
 
-class Rectangle implements Shape {
-    int length, width;
-
-    Rectangle(int length, int width) {
-        this.length = length;
-        this.width = width;
-    }
-
-    public int getArea(){
-        return length * width;
-    }
-
-    public int getCircumference(){
-        return 2 * (length + width);
+class Triangle implements Shape{
+    @Override
+    public void printName() {
+        System.out.println("Triangle");
     }
 }
 
-class JavaInterface {
-    public static void main(String[] args) {
-        // Create objects of Square and Rectangle class
-        Square sq = new Square(10);
-        Rectangle rec = new Rectangle(10, 20);
-
-        // Print area of Shapes
-        System.out.println("Area of Square: "
-                + sq.getArea());
-        System.out.println("Area of Rectangle: "
-                + rec.getArea());
-
-        // Print circumference of Shapes
-        System.out.println("Circumference of Square: "
-                + sq.getCircumference());
-        System.out.println("Circumference of Rectangle: "
-                + rec.getCircumference());
+class Parallelogram implements Shape{
+    @Override
+    public void printName() {
+        System.out.println("Parallelogram");
     }
+}
+
+class ShapeName{
+    public static void main(String[] args){
+        Circle c = new Circle();
+        c.printName();
+        Square s =new Square();
+        s.printName();
+        Rectangle r = new Rectangle();
+        r.printName();
+        Triangle t = new Triangle();
+        t.printName();
+        Parallelogram p = new Parallelogram();
+        p.printName();
+
+    }
+
 }
